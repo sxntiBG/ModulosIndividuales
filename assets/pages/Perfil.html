@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="BeautySales/assets/img/LogoBeautySales.png"
+      type="image/x-icon"
+    />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="BeautySales/assets/css/Perfil.css" />
+
+    <title>Perfil</title>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="Inicio.html" class="brand">
+        <img src="BeautySales/assets/img/LogoBeautySales.png" class="img-principal" />
+        <span class="text">Beauty Sales</span>
+      </a>
+      <ul class="side-menu top menu-horizontal">
+        <li>
+          <a href="Inicio.html">
+            <i class="bx bx-home-alt-2"></i>
+            <span class="text">Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="Productos.html">
+            <i class="bx bx-basket"></i>
+            <span class="text">Productos</span>
+          </a>
+        </li>
+        <li>
+          <a href="Categorias.html">
+            <i class="bx bx-category"></i>
+            <span class="text">Categorias</span>
+          </a>
+        </li>
+        <li class="menu-horizontal01">
+          <a href="" id="miEnlace">
+            <i class='bx bx-trending-up'></i>
+            <span class="text text01">Ventas</span>
+            <i class='bx bxs-chevron-down' ></i>
+          </a>
+          <ul class="menu-vertical">
+            <li>
+              <a href="Facturacion.html">
+                <i class='bx bx-detail'></i>
+                <span class="text">Facturación</span>
+              </a>
+            </li>
+            <li>
+              <a href="Ventas.html">
+                <i class='bx bx-bar-chart'></i>
+                <span class="text">Registro de ventas</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="Compras.html">
+            <i class='bx bx-trending-down'></i>
+            <span class="text">Compras</span>
+          </a>
+        </li>
+        <li>
+          <a href="Proveedores.html">
+            <i class="bx bx-package"></i>
+            <span class="text">Proveedores</span>
+          </a>
+        </li>
+        <li class="menu-horizontal02 active" >
+          <a href="" id="miEnlace2">
+            <i class="bx bxs-cog"></i>
+            <span class="text text02">Configuración</span>
+            <i class='bx bxs-chevron-down'></i>
+          </a>
+          <ul class="menu-vertical">
+            <li>
+              <a href="Usuarios.html">
+                <i class="bx bx-user"></i>
+                <span class="text">Usuarios</span>
+              </a>
+            </li>
+            <li>
+              <a href="Roles.html">
+                <i class='bx bx-user-circle'></i>
+                <span class="text">Roles</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="side-menu">
+        <li>
+          <a href="index.html" class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Cerrar sesión</span>
+          </a>
+        </li>
+      </div>
+    </section>
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <a href="Perfil.html" class="nav-link">Perfil</a>
+        <form action="">
+          <div class="form-input">
+            <button type="submit" class="search-btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+        <a href="Perfil.html" class="profile">
+            <img src="BeautySales/assets/img/login-icon.svg" alt="" id="avatar-image-preview">
+        </a>
+      </nav>
+
+      <!-- MAIN -->
+      <main>
+        <section class="seccion-perfil-usuario">
+            <div class="perfil-usuario-header">
+                <div class="perfil-usuario-portada">
+                  <div class="perfil-usuario-avatar">
+                    <img src="BeautySales/assets/img/login-icon.svg" alt="" id="avatar-image">
+                    <button type="button" class="boton-avatar" id="avatar-button">
+                      <i class="far fa-image"></i>
+                    </button>
+                    <input type="file" id="avatar-input" style="display: none">
+                  </div>
+                </div>
+              </div>
+                    
+                </div>
+            </div>
+            <div class="perfil-usuario-body">
+                <div class="perfil-usuario-bio">
+                    <h3 class="titulo">Maria Yolanda Orozco</h3>
+                    <p class="titulo">Administrador</p>  
+                </div>
+                <div class="perfil-usuario-footer ">
+                    <ul class="lista-datos">
+                        
+                        <li><i class="icono bx bx-user-circle"></i> Nombre: <input type="text" value="Maria Yolanda Orozco" id="editable" disabled ></li>
+                        <li><i class="icono bx bx-lock-alt"></i> Contraseña: <input type="password" value="1234567890" id="editable" disabled></li>
+                        <li><i class="icono bx bx-envelope"></i> Email: <input type="email" value="Yolanda@gmail.com" id="editable" disabled></li>
+                        <li><i class="icono bx bx-crown"></i> Rol: <input type="text" value="Administrador" disabled></li>
+                    </ul>
+                    
+                </div>
+                
+            </div>
+        </section>
+        
+        </div>
+      </main>
+    </section>
+
+    <script src="BeautySales/assets/js/Perfil.js"></script>
+    <script src="BeautySales/assets/js/global.js"></script>
+  </body>
+</html>

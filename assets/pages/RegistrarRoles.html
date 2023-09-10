@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="BeautySales/assets/img/LogoBeautySales.png"
+      type="image/x-icon"
+    />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="BeautySales/assets/css/RegistrarRoles.css" />
+
+    <title>Registrar roles</title>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+		<a href="Inicio.html" class="brand">
+		  <img src="BeautySales/assets/img/LogoBeautySales.png" class="img-principal" />
+		  <span class="text">Beauty Sales</span>
+		</a>
+		<ul class="side-menu top menu-horizontal">
+		  <li>
+			<a href="Inicio.html">
+			  <i class="bx bx-home-alt-2"></i>
+			  <span class="text">Inicio</span>
+			</a>
+		  </li>
+		  <li>
+			<a href="Productos.html">
+			  <i class="bx bx-basket"></i>
+			  <span class="text">Productos</span>
+			</a>
+		  </li>
+		  <li>
+			<a href="Categorias.html">
+			  <i class="bx bx-category"></i>
+			  <span class="text">Categorias</span>
+			</a>
+		  </li>
+		  <li class="menu-horizontal01">
+			<a href="" id="miEnlace">
+			  <i class='bx bx-trending-up'></i>
+			  <span class="text text01">Ventas</span>
+			  <i class='bx bxs-chevron-down' ></i>
+			</a>
+			<ul class="menu-vertical">
+			  <li>
+				<a href="Facturacion.html">
+				  <i class='bx bx-detail'></i>
+				  <span class="text">Facturación</span>
+				</a>
+			  </li>
+			  <li>
+				<a href="Ventas.html">
+				  <i class='bx bx-bar-chart'></i>
+				  <span class="text">Registro de ventas</span>
+				</a>
+			  </li>
+			</ul>
+		  </li>
+		  <li>
+			  <a href="Compras.html">
+			  <i class='bx bx-trending-down'></i>
+			  <span class="text">Compras</span>
+			</a>
+		  </li>
+		  <li>
+			<a href="Proveedores.html">
+			  <i class="bx bx-package"></i>
+			  <span class="text">Proveedores</span>
+			</a>
+		  </li>
+		  <li class="menu-horizontal02 active">
+			<a href="" id="miEnlace2">
+			  <i class="bx bxs-cog"></i>
+			  <span class="text text02">Configuración</span>
+			  <i class='bx bxs-chevron-down'></i>
+			</a>
+			<ul class="menu-vertical">
+				<li>
+					<a href="Usuarios.html">
+					  <i class="bx bx-user"></i>
+					  <span class="text">Usuarios</span>
+					</a>
+				  </li>
+				  <li>
+					<a href="Roles.html">
+					  <i class='bx bx-user-circle'></i>
+					  <span class="text">Roles</span>
+					</a>
+				  </li>
+		</ul>
+		<div class="side-menu">
+		  <li>
+			<a href="index.html" class="logout">
+			  <i class="bx bxs-log-out-circle"></i>
+			  <span class="text">Cerrar sesión</span>
+			</a>
+		  </li>
+		</div>
+	  </section>
+	  <!-- CONTENT -->
+	  <section id="content">
+		<!-- NAVBAR -->
+		<nav>
+		  <i class="bx bx-menu"></i>
+		  <a href="Usuarios.html" class="nav-link">Registrar roles</a>
+		  <form action="" id="search-form">
+        <div class="form-input">
+          <button type="submit" class="search-btn">
+          <i class="bx bx-search"></i>
+          </button>
+        </div>
+        </form>
+		  <input type="checkbox" id="switch-mode" hidden />
+		  <label for="switch-mode" class="switch-mode"></label>
+		  <a href="Perfil.html" class="profile">
+            <img src="BeautySales/assets/img/login-icon.svg" alt="" id="avatar-image-preview">
+        </a>
+		</nav>
+  
+		  <!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			 <!-- BOTON REGISTRAR COMPRA-->
+			 <div class="head">
+				<div class="table-data">
+				  <h1>Crear nuevo rol</h1>
+				</div>
+				<div class="btn-table">
+					<a href="Roles.html" class="btn-up"><button class="btn-up">Volver</button></a>
+				</div>
+			  </div>
+        
+          <div class="table-data">
+            <div class="order">
+                <div class="container">
+                    <label for="roleName">Nombre del rol:</label>
+                    <input type="text" id="roleName" name="roleName">
+                </div>
+                <h4>Modulos:</h4>
+                <div class="container2">
+                    <div class="container-check">
+                        <label class="custom-checkbox" for="module-check">
+                            <input type="checkbox" id="module-check">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label for="module-check" class="label-text">Productos</label>
+                    </div>
+                    <div class="container-check">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="module-check1">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label for="module-check1" class="label-text">Ventas</label>
+                    </div>
+                    <div class="container-check">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="module-check2">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label for="module-check2" class="label-text">Compras</label>
+                    </div>
+                    <div class="container-check">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="module-check3">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label for="module-check3" class="label-text">Proveedores</label>
+                    </div>
+                </div>
+                <div class="container3">
+                    <button type="submit">Crear</button>
+                </div>
+            </div> 
+            </div> 
+					  
+				
+		</main>
+	</section>
+	
+	
+
+	<script src="BeautySales/assets/js/RegistrarRoles.js"></script>
+	<script src="BeautySales/assets/js/global.js"></script>
+</body>
+</html>
