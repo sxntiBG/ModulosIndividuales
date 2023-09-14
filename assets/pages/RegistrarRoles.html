@@ -21,58 +21,58 @@
   <body>
     <!-- SIDEBAR -->
     <section id="sidebar">
-		<a href="Inicio.html" class="brand">
+		<a href="/Index.html" class="brand">
 		  <img src="/assets/img/LogoBeautySales.png" class="img-principal" />
 		  <span class="text">Beauty Sales</span>
 		</a>
 		<ul class="side-menu top menu-horizontal">
-		  <li>
-			<a href="Inicio.html">
+		  <li >
+			<a href="/Index.html">
 			  <i class="bx bx-home-alt-2"></i>
 			  <span class="text">Inicio</span>
 			</a>
 		  </li>
 		  <li>
-			<a href="Productos.html">
+			<a href="" class="noDisponible">
 			  <i class="bx bx-basket"></i>
 			  <span class="text">Productos</span>
 			</a>
 		  </li>
 		  <li>
-			<a href="Categorias.html">
+			<a href="" class="noDisponible">
 			  <i class="bx bx-category"></i>
 			  <span class="text">Categorias</span>
 			</a>
 		  </li>
 		  <li class="menu-horizontal01">
 			<a href="" id="miEnlace">
-			  <i class='bx bx-trending-up'></i>
+			  <i class="bx bx-trending-up"></i>
 			  <span class="text text01">Ventas</span>
-			  <i class='bx bxs-chevron-down' ></i>
+			  <i class="bx bxs-chevron-down"></i>
 			</a>
 			<ul class="menu-vertical">
 			  <li>
-				<a href="Facturacion.html">
-				  <i class='bx bx-detail'></i>
+				<a href="" class="noDisponible">
+				  <i class="bx bx-detail"></i>
 				  <span class="text">Facturación</span>
 				</a>
 			  </li>
 			  <li>
-				<a href="Ventas.html">
-				  <i class='bx bx-bar-chart'></i>
+				<a href="" class="noDisponible">
+				  <i class="bx bx-bar-chart"></i>
 				  <span class="text">Registro de ventas</span>
 				</a>
 			  </li>
 			</ul>
 		  </li>
 		  <li>
-			  <a href="Compras.html">
-			  <i class='bx bx-trending-down'></i>
+			<a href="" class="noDisponible">
+			  <i class="bx bx-trending-down"></i>
 			  <span class="text">Compras</span>
 			</a>
 		  </li>
 		  <li>
-			<a href="Proveedores.html">
+			<a href="" class="noDisponible">
 			  <i class="bx bx-package"></i>
 			  <span class="text">Proveedores</span>
 			</a>
@@ -81,25 +81,27 @@
 			<a href="" id="miEnlace2">
 			  <i class="bx bxs-cog"></i>
 			  <span class="text text02">Configuración</span>
-			  <i class='bx bxs-chevron-down'></i>
+			  <i class="bx bxs-chevron-down"></i>
 			</a>
 			<ul class="menu-vertical">
-				<li>
-					<a href="Usuarios.html">
-					  <i class="bx bx-user"></i>
-					  <span class="text">Usuarios</span>
-					</a>
-				  </li>
-				  <li>
-					<a href="Roles.html">
-					  <i class='bx bx-user-circle'></i>
-					  <span class="text">Roles</span>
-					</a>
-				  </li>
+			  <li>
+				<a href="/assets/pages/Usuarios.html">
+				  <i class="bx bx-user"></i>
+				  <span class="text">Usuarios</span>
+				</a>
+			  </li>
+			  <li>
+				<a href="/assets/pages/Roles.html">
+				  <i class="bx bx-user-circle"></i>
+				  <span class="text">Roles</span>
+				</a>
+			  </li>
+			</ul>
+		  </li>
 		</ul>
 		<div class="side-menu">
 		  <li>
-			<a href="index.html" class="logout">
+			<a href="" class="logout" class="noDisponible">
 			  <i class="bx bxs-log-out-circle"></i>
 			  <span class="text">Cerrar sesión</span>
 			</a>
@@ -140,11 +142,11 @@
 				</div>
 			  </div>
         
-          <div class="table-data">
+          <form class="table-data">
             <div class="order">
                 <div class="container">
                     <label for="roleName">Nombre del rol:</label>
-                    <input type="text" id="roleName" name="roleName">
+                    <input type="text" id="roleName" name="roleName" >
                 </div>
                 <h4>Modulos:</h4>
                 <div class="container2">
@@ -178,17 +180,17 @@
                     </div>
                 </div>
                 <div class="container3">
-                    <button type="submit">Crear</button>
+                    <button type="submit" id="crearRol">Crear</button>
                 </div>
             </div> 
-            </div> 
+            </form> 
 					  
 				
 		</main>
 	</section>
 	
-	
-
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="/assets/js/RegistrarRoles.js"></script>
 	<script src="/assets/js/global.js"></script>
 </body>

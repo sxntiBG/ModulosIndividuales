@@ -1,208 +1,36 @@
-const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
+ //*Validaciones
 
-allSideMenu.forEach(item=> {
-	const li = item.parentElement;
+// Función que se ejecutará al hacer clic en el botón
+document.getElementById('crearRol').addEventListener('click', function (event) {
+    event.preventDefault(); // Evita el comportamiento predeterminado del botón (recarga de la página)
 
-	item.addEventListener('click', function () {
-		allSideMenu.forEach(i=> {
-			i.parentElement.classList.remove('active');
-		})
-		li.classList.add('active');
-	})
-});
+    // Obtiene el valor del campo de entrada de texto
+    var roleName = document.getElementById('roleName').value;
 
-
-// TOGGLE SIDEBAR
-const menuBar = document.querySelector('#content nav .bx.bx-menu');
-const sidebar = document.getElementById('sidebar');
-
-menuBar.addEventListener('click', function () {
-	sidebar.classList.toggle('hide');
-})
-
-const searchButton = document.querySelector('#content nav form .form-input button');
-const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
-const searchForm = document.querySelector('#content nav form');
-
-searchButton.addEventListener('click', function (e) {
-	if(window.innerWidth < 576) {
-		e.preventDefault();
-		searchForm.classList.toggle('show');
-		if(searchForm.classList.contains('show')) {
-			searchButtonIcon.classList.replace('bx-search', 'bx-x');
-		} else {
-			searchButtonIcon.classList.replace('bx-x', 'bx-search');
-		}
-	}
-})
-
-
-
-
-
-if(window.innerWidth < 768) {
-	sidebar.classList.add('hide');
-} else if(window.innerWidth > 576) {
-	searchButtonIcon.classList.replace('bx-x', 'bx-search');
-	searchForm.classList.remove('show');
-}
-
-
-window.addEventListener('resize', function () {
-	if(this.innerWidth > 576) {
-		searchButtonIcon.classList.replace('bx-x', 'bx-search');
-		searchForm.classList.remove('show');
-	}
-})
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const ventasLink = document.querySelector('.menu-horizontal01 > a');
-    const menuVertical = document.querySelector('.menu-horizontal01 > .menu-vertical');
-
-    ventasLink.addEventListener('click', function (e) {
-        e.preventDefault();
-        menuVertical.classList.toggle('show');
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const ventasLink = document.querySelector('.menu-horizontal02 > a');
-    const menuVertical = document.querySelector('.menu-horizontal02 > .menu-vertical');
-
-    ventasLink.addEventListener('click', function (e) {
-        e.preventDefault();
-        menuVertical.classList.toggle('show');
-    });
-});
-
-
-
-// const enlace = document.getElementById('miEnlace');
-
-// enlace.addEventListener('click', function(event) {
-//   event.preventDefault(); // Evitar que el enlace cambie de página
-//   enlace.classList.add('activo'); // Agregar una clase al enlace
-// });
-
-const enlace = document.getElementById('miEnlace');
-const elementoLi = enlace.parentNode; // Obtenemos el elemento li padre del enlace
-
-enlace.addEventListener('click', function(event) {
-  event.preventDefault();
-  elementoLi.classList.toggle('activo'); // Agregamos/quitamos la clase al elemento li
-});
-
-const enlace2 = document.getElementById('miEnlace2');
-const elementoLi2 = enlace2.parentNode;
-
-enlace2.addEventListener('click', function(event) {
-  event.preventDefault();
-  elementoLi2.classList.toggle('activo');
-});
-
-
-// TO DELETE SOMETHING
-document.addEventListener("DOMContentLoaded", function () {
-    const editButtons = document.querySelectorAll(".edit-button");
-    const deleteButtons = document.querySelectorAll(".delete-button");
-
-    editButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            // Handle edit functionality here
-            console.log("Edit button clicked");
+    // Verifica si el campo está lleno
+    if (roleName.trim() !== '') {
+        // Muestra una alerta de confirmación usando SweetAlert
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: '¿Quieres crear el rol con el nombre: ' + roleName + '?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, crear',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            // Si el usuario confirma, redirige a la página 'Roles.html'
+            if (result.isConfirmed) {
+                window.location.href = '/assets/pages/Roles.html'; // Cambia 'Roles.html' por la URL de la página a la que quieres redirigir
+            }
         });
-    });
-
-    deleteButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            // Handle delete functionality here
-            console.log("Delete button clicked");
-        });
-    });
-});
-
-
-//BOTON DE SHOW
-
-function toggleSubfila(button) {
-    const row = button.parentNode.parentNode;
-    const subfila = row.nextElementSibling;
-    
-    if (subfila.style.display === 'table-row') {
-        subfila.style.display = 'none';
     } else {
-        closeAllSubfilas();
-        subfila.style.display = 'table-row';
+        // Si el campo está vacío, muestra una alerta de error
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'El campo de nombre del rol está vacío.',
+            showConfirmButton: false,
+            timer: 2000
+        });
     }
-}
-
-function closeAllSubfilas() {
-    const subfilas = document.querySelectorAll('.subfila');
-    subfilas.forEach(subfila => {
-        subfila.style.display = 'none';
-    });
-}
-
-
-
-
-	//DETALLES DE COMPRAS
-    var currentlyOpenButton = null;
-
-    function toggleSubfila(subfilaId, button) {
-        var subfila = document.getElementById(subfilaId);
-    
-        if (currentlyOpenButton !== null && currentlyOpenButton !== button) {
-            var prevSubfilaId = currentlyOpenButton.getAttribute("data-subfila");
-            var prevSubfila = document.getElementById(prevSubfilaId);
-            prevSubfila.style.display = "none";
-            currentlyOpenButton.classList.remove("active");
-        }
-    
-        if (subfila.style.display === "none" || subfila.style.display === "") {
-            subfila.style.display = "table-row";
-            button.classList.add("active");
-            currentlyOpenButton = button;
-        } else {
-            subfila.style.display = "none";
-            button.classList.remove("active");
-            currentlyOpenButton = null;
-        }
-    }
-    
-
-//SWITCH
-const toggleSwitches = document.querySelectorAll('.toggleSwitch');
-
-toggleSwitches.forEach(switchElement => {
-  switchElement.addEventListener('change', () => {
-    const toggleLabel = switchElement.nextElementSibling;
-    toggleLabel.style.backgroundColor = switchElement.checked ? '#66bb6a' : '#ccc';
-  });
 });
-
-//Buscador
-
- function searchTable() {
-    const input = document.getElementById("search-input");
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById("table");
-    const rows = table.getElementsByTagName("tr");
-
-    for (let i = 0; i < rows.length; i++) {
-      const td = rows[i].getElementsByTagName("td")[1];
-      if (td) {
-        const textValue = td.textContent || td.innerText;
-        if (textValue.toLowerCase().indexOf(filter) > -1) {
-          rows[i].style.display = "";
-        } else {
-          rows[i].style.display = "none";
-        }
-      }
-    }
-  }
