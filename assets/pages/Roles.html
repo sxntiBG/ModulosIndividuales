@@ -154,76 +154,10 @@
                           <th>Ventas</th>
                           <th>Compras</th>
                           <th>Proveedores</th>
-                          <th>Estado</th>
                           <th>Acciones</th>
                       </tr>
                   </thead>
-                  <tbody>
-                      <tr data-id="1" data-nombre="Administrador">
-                          <td>1</td>
-                          <td>Administrador</td>
-                          <td><i class='bx bxs-check-square checks' style='color:#04ff00'></i></td>
-                          <td><i class='bx bxs-check-square checks' style='color:#04ff00'></i></td>
-                          <td><i class='bx bxs-check-square checks' style='color:#04ff00'></i></td>
-                          <td><i class='bx bxs-check-square checks' style='color:#04ff00'></i></td>
-                          <td>
-                              <div class="switch">
-                                  <input type="checkbox" class="toggleSwitch" id="toggleSwitch1">
-                                  <label class="toggleLabel" for="toggleSwitch1"></label>
-                              </div>
-                          </td>
-                          <td>
-                              <button class="edit-button" onclick="editar(1)"><i class='bx bxs-edit-alt'></i></button>
-                          </td>
-                      </tr>
-                      <tr data-id="2" data-nombre="Sub-admin">
-                        <td>2</td>
-                        <td>Sub-admin</td>
-                        <td><i class='bx bxs-check-square checks' style='color:#04ff00'  ></i></td>
-                        <td><i class='bx bxs-check-square checks' style='color:#04ff00'  ></i></td>
-                        <td><i class='bx bxs-check-square checks' style='color:#04ff00'  ></i></td>
-                        <td><i class='bx bxs-check-square checks' style='color:#04ff00'  ></i></td>
-                        <td>
-                          <div class="switch">
-                            <input type="checkbox" class="toggleSwitch" id="toggleSwitch2">
-                            <label class="toggleLabel" for="toggleSwitch2"></label>
-                          </div>
-                        </td>
-                        <td>             
-                          <button class="edit-button" onclick="editar(2)"><i class='bx bxs-edit-alt'></i></button>                           </td>
-                      </tr>
-                      <tr data-id="3" data-nombre="Empleado">
-                        <td>3</td>
-                        <td>Empleado</td>
-                        <td><i class='bx bxs-check-square checks' style='color:#04ff00'  ></i></td>
-                        <td><i class='bx bxs-x-square checks' style='color:#ff0004'  ></i></td>
-                        <td><i class='bx bxs-check-square checks' style='color:#04ff00'  ></i></td>
-                        <td><i class='bx bxs-check-square checks' style='color:#04ff00'  ></i></td>
-                        <td>
-                          <div class="switch">
-                            <input type="checkbox" class="toggleSwitch" id="toggleSwitch3">
-                            <label class="toggleLabel" for="toggleSwitch3"></label>
-                          </div>
-                        </td>
-                        <td>
-                          <button class="edit-button" onclick="editar(3)"><i class='bx bxs-edit-alt'></i></button>                           </td>
-                      </tr>
-                      <tr data-id="4" data-nombre="Empleado 2">
-                        <td>4</td>
-                        <td>Empleado 2</td>
-                        <td><i class='bx bxs-check-square checks' style='color:#04ff00'  ></i></td>
-                        <td><i class='bx bxs-x-square checks' style='color:#ff0004'  ></i></td>
-                        <td><i class='bx bxs-x-square checks' style='color:#ff0004'  ></i></i></td>
-                        <td><i class='bx bxs-x-square checks' style='color:#ff0004'  ></i></td>
-                        <td>
-                          <div class="switch">
-                            <input type="checkbox" class="toggleSwitch" id="toggleSwitch4">
-                            <label class="toggleLabel" for="toggleSwitch4"></label>
-                          </div>
-                        </td>
-                        <td>
-                          <button class="edit-button" onclick="editar(4)"><i class='bx bxs-edit-alt'></i></button>                           </td>
-                      </tr>
+                  <tbody id="table-data">
                   </tbody>
               </table>
           </div>

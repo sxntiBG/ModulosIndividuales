@@ -6,9 +6,10 @@ document.getElementById('crearRol').addEventListener('click', function (event) {
 
     // Obtiene el valor del campo de entrada de texto
     var roleName = document.getElementById('roleName').value;
+    var idd = document.getElementById('idd').value
 
     // Verifica si el campo está lleno
-    if (roleName.trim() !== '') {
+    if (roleName.trim() !== '' && idd.trim() !== '') {
         // Muestra una alerta de confirmación usando SweetAlert
         Swal.fire({
             title: '¿Estás seguro?',
@@ -28,9 +29,53 @@ document.getElementById('crearRol').addEventListener('click', function (event) {
         Swal.fire({
             position: 'center',
             icon: 'error',
-            title: 'El campo de nombre del rol está vacío.',
+            title: 'Llena todos los campos porfavor!',
             showConfirmButton: false,
             timer: 2000
         });
     }
+});
+
+//!-----------------------------------------------------------------
+
+//*API
+
+document.getElementById("miFormulario").addEventListener("submit", function (e) {
+    e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+    // Captura los valores del formulario
+    const idd = document.getElementById("idd").value;
+    const roleName = document.getElementById("roleName").value;
+    const productos = document.getElementById("module-check").checked;
+    const ventas = document.getElementById("module-check1").checked;
+    const compras = document.getElementById("module-check2").checked;
+    const proveedores = document.getElementById("module-check3").checked;
+
+    // Crea un objeto con los datos a enviar
+    const data = {
+        "id": "5",
+    "nombre": "ea",
+    "productos": true,
+    "ventas": false,
+    "compras": false,
+    "proveedores": false
+    };
+
+    // Realiza la solicitud POST a la API
+    fetch("https://apiindividual.onrender.com/api/roles", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Respuesta de la API:", data);
+        // Aquí puedes agregar lógica adicional según lo que necesites hacer con la respuesta de la API
+    })
+    .catch(error => {
+        console.error("Error al enviar la solicitud:", error);
+        // Maneja cualquier error que ocurra durante la solicitud
+    });
 });

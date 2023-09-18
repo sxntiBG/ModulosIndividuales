@@ -132,59 +132,58 @@
 
 		<!-- MAIN -->
 		<main>
-			 <!-- BOTON REGISTRAR COMPRA-->
-			 <div class="head">
-				<div class="table-data">
-				  <h1>Editar usuario</h1>
-				</div>
-				<div class="btn-table">
-					<a href="Usuarios.html" class="btn-up"><button class="btn-up">Volver</button></a>
-				</div>
-			  </div>
-        
-          <div class="table-data">
-            <div class="order">
-                <div class="container">
-					<div class="container2">
-						<div class="container3">
-							<label for="">Nombre</label>
-							<input type="text">
-						</div>
-						<div class="container3">
-							<label for="">Correo</label>
-							<input type="email">
-						</div>
-					</div>
-					<div class="container2">
-						<div class="container3">
-							<label for="">Contraseña</label>
-							<input type="text">
-						</div>
-						<div class="container3">
-							<label for="">Fecha</label>
-							<input type="email" disabled>
-						</div>
-					</div>
-					<div class="container4">
-						<label for="">Rol</label>
-						<select name="" id="">
-							<option value="">Elegir rol...</option>
-							<option value="">Administrador</option>
-							<option value="">Sub-Admin</option>
-							<option value="">Empleado</option>
-							<option value="">Empleado 2</option>
-						</select>
-					</div>
-                    <div class="container3">
-                        <button type="submit">Guardar</button>
-                    </div>
-					
-				</div>
-            </div> 
-            </div> 
-					  
-				
-		</main>
+			<!-- BOTON REGISTRAR COMPRA-->
+			<div class="head">
+			   <div class="table-data">
+				 <h1>Editar usuario</h1>
+			   </div>
+			   <div class="btn-table">
+				   <a href="Usuarios.html" class="btn-up"><button class="btn-up">Volver</button></a>
+			   </div>
+			 </div>
+	   
+			 <form class="table-data" id="miFormulario">
+			   <div class="order">
+				   <div class="container">
+					   <div class="container2">
+						   <div class="container3">
+							   <label for="nombre">Nombre</label>
+							   <input type="text" id="nombre">
+						   </div>
+						   <div class="container3">
+							   <label for="correo">Correo</label>
+							   <input type="email" id="correo">
+						   </div>
+					   </div>
+					   <div class="container2">
+						   <div class="container3">
+							   <label for="contraseña">Contraseña</label>
+							   <input type="password" id="contraseña">
+						   </div>
+						   <div class="container3">
+							   <label for="fecha">Fecha</label>
+							   <input type="text" id="fecha" disabled>
+						   </div>
+					   </div>
+					   <div class="container4">
+						   <label for="rol">Rol</label>
+						   <select id="rol">
+							   <option value="">Elegir rol...</option>
+							   <option value="Administrador">Administrador</option>
+							   <option value="Sub-Admin">Sub-Admin</option>
+							   <option value="Empleado">Empleado</option>
+							   <option value="Empleado 2">Empleado 2</option>
+						   </select>
+					   </div>
+					   <div class="container3">
+						   <button type="submit">Guardar</button>
+					   </div>
+				   </div>
+			   </div>
+		   </form>
+					 
+			   
+	   </main>
 	</section>
 	
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

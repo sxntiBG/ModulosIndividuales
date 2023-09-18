@@ -614,6 +614,16 @@ height: 40px;
 }
 /* MAIN */
 /* CONTENT */
+.remove-button{
+	padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+    border-radius: 5px;
+	background-color: red;
+    color: white;
+	margin-right: 10px;
+}
 
 .edit-button{
     padding: 10px;
@@ -625,7 +635,7 @@ height: 40px;
     color: white;
 }
 
-.edit-button:hover{
+.edit-button:hover, .remove-button:hover{
     background-color: transparent;
     color: #000;
     border-radius: 50%; 

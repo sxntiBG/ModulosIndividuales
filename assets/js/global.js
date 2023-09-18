@@ -53,6 +53,25 @@ const sidebar = document.getElementById("sidebar");
 
 menuBar.addEventListener("click", function () {
   sidebar.classList.toggle("hide");
+  
+  // Guardar el estado del sidebar en una cookie
+  const isHidden = sidebar.classList.contains("hide");
+  document.cookie = `sidebarHidden=${isHidden}; path=/`;
+});
+
+// Función para leer el valor de una cookie
+function getCookie(name) {
+  const cookieValue = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith(name))
+    ?.split("=")[1];
+  return cookieValue === "true";
+}
+
+// Aplicar el estado guardado del sidebar al cargar la página
+window.addEventListener("load", function () {
+  const isHidden = getCookie("sidebarHidden");
+  sidebar.classList.toggle("hide", isHidden);
 });
 
 const searchButton = document.querySelector(
@@ -88,6 +107,9 @@ window.addEventListener("resize", function () {
     searchForm.classList.remove("show");
   }
 });
+
+
+
 
 
 //!-----------------------------------------------------------------------
@@ -133,6 +155,7 @@ enlace2.addEventListener("click", function (event) {
   event.preventDefault();
   elementoLi2.classList.toggle("activo");
 });
+
 
 //!-----------------------------------------------------------------------
 

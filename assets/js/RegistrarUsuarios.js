@@ -11,7 +11,7 @@
  var mesFormateado = mes < 10 ? '0' + mes : mes;
 
  // Formatear la fecha como "dd/mm/yyyy"
- var fechaFormateada = diaFormateado + '/' + mesFormateado + '/' + año;
+ var fechaFormateada = año + '-' + mesFormateado + '-' + diaFormateado;
 
  // Establecer la fecha formateada como el valor del campo de entrada
  document.getElementById('fecha').value = fechaFormateada;
@@ -58,4 +58,46 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
             timer: 2000
         });
     }
+});
+
+ //! -----------------------------------------------------------------
+
+ //* Api
+
+ document.getElementById("miFormulario").addEventListener("submit", function (e) {
+    e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+    // Captura los valores de los campos del formulario
+    const id = document.getElementById("id").value;
+    const nombre = document.getElementById("nombre").value;
+    const correo = document.getElementById("correo").value;
+    const contraseña = document.getElementById("contraseña").value;
+    const fecha = document.getElementById("fecha").value;
+    const rol = document.getElementById("rol").value;
+
+    // Crea un objeto con los datos a enviar
+    const data = {
+        "id" : id,
+        "nombre": nombre,
+        "correo": correo,
+        "contraseña": contraseña,
+        "fecha" : fecha,
+        "rol": rol
+    };
+
+    // Realiza la solicitud POST a la API
+    fetch("https://apiindividual.onrender.com/api/usuarios", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Respuesta de la API:", data);
+    })
+    .catch(error => {
+        console.error("Error al enviar la solicitud:", error);
+    });
 });
