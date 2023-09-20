@@ -1,8 +1,8 @@
  //*Validaciones
 
 // Función que se ejecutará al hacer clic en el botón
-document.getElementById('crearRol').addEventListener('click', function (event) {
-    event.preventDefault(); // Evita el comportamiento predeterminado del botón (recarga de la página)
+document.getElementById('miFormulario').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evita el envío predeterminado del formulario
 
     // Obtiene el valor del campo de entrada de texto
     var roleName = document.getElementById('roleName').value;
@@ -46,11 +46,11 @@ document.getElementById("miFormulario").addEventListener("submit", function(e) {
     // Captura los valores de los campos del formulario
     const id = document.getElementById("idd").value;
     const nombre = document.getElementById("roleName").value;
-    const productos = document.getElementById("module-check1").checked;
-    const ventas = document.getElementById("module-check2").checked;
-    const compras = document.getElementById("module-check3").checked;
-    const proveedores = document.getElementById("module-check4").checked;
-
+    const productos = document.getElementById("module-check").checked;
+    const ventas = document.getElementById("module-check1").checked;
+    const compras = document.getElementById("module-check2").checked;
+    const proveedores = document.getElementById("module-check3").checked;
+    
     // Crea un objeto con los datos a enviar
     const data = {
         "id": id,
