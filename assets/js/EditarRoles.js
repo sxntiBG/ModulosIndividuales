@@ -13,7 +13,7 @@ document.getElementById('crearRol').addEventListener('click', function (event) {
         // Muestra una alerta de confirmación usando SweetAlert
         Swal.fire({
             title: '¿Estás seguro?',
-            text: '¿Quieres crear el rol con el nombre: ' + roleName + '?',
+            text: '¿Quieres guardar el rol con el nombre: ' + roleName + '?',
             icon: 'question',
             showCancelButton: true,
             confirmButtonText: 'Sí, crear',
@@ -88,7 +88,7 @@ formulario.addEventListener('submit', function (e) {
      "proveedores": proveedores
  };
 
-  fetch(`https://apiindividual.onrender.com/api/roles/${userId}`, {
+  fetch(api, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
