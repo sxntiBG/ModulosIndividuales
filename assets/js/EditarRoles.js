@@ -35,3 +35,74 @@ document.getElementById('crearRol').addEventListener('click', function (event) {
         });
     }
 });
+
+
+//! -----------------------------------------------------------------
+//*Recibir parametros del object ID
+
+// Obtener el ID del usuario de los parámetros de URL
+const urlParams = new URLSearchParams(window.location.search);
+const userId = urlParams.get('id');
+
+//*API
+
+const api = `https://apiindividual.onrender.com/api/roles/${userId}`
+
+fetch(api)
+  .then((response) => response.json())
+  .then((data) => mostrarData(data))
+  .catch((error) => {
+    console.error('Error al obtener los roles:', error);
+  });
+
+  const mostrarData = (data) =>{
+    document.getElementById('idd').value = data.id;
+    document.getElementById('roleName').value = data.nombre;
+    document.getElementById('module-check').value = data.productos;
+    document.getElementById('module-check1').value = data.ventas;
+    document.getElementById('module-check2').value = data.compras;
+    document.getElementById('module-check3').value = data.proveedores;
+  }
+
+
+const formulario = document.getElementById('miFormulario');
+
+formulario.addEventListener('submit', function (e) {
+  e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+  // Obtén los valores del formulario
+  const id = document.getElementById('idd').value
+  const nombre = document.getElementById('roleName').value;
+  const productos = document.getElementById('module-check').value;
+  const ventas = document.getElementById('module-check1').value;
+  const compras = document.getElementById('module-check2').value;
+  const proveedores = document.getElementById('module-check3').value;
+
+  // Crea un objeto con los datos a actualizar
+  const datosUsuario = {
+    "id": id,
+    "nombre": nombre,
+    "productos": productos,
+    "ventas": ventas,
+    "compras" : compras, 
+    "proveedores": proveedores
+  };
+
+  fetch(`https://apiindividual.onrender.com/api/usuarios/${userId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(datosUsuario),
+  })
+    .then((response) => {
+      if (response.ok) {
+        window.location.href = '/assets/pages/Roles.html';
+      } else {
+        console.error('Error al actualizar los datos del rol en la API');
+      }
+    })
+    .catch((error) => {
+      console.error('Error al actualizar los datos del rol:', error);
+    });
+});

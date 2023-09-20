@@ -246,7 +246,7 @@ height: 40px;
 	padding: 0 16px;
 	height: 100%;
 	border: none;
-	background: transparent;
+	background: var(--grey);
 	border-radius: 36px 0 0 36px;
 	outline: none;
 	width: 100%;
@@ -459,7 +459,15 @@ height: 40px;
 
 .container{
 	background-color: var(--light);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
 
+.container3{
+	display: flex;
+	flex-direction: column;
 }
 
 .img-principal{
@@ -733,6 +741,10 @@ height: 40px;
 .container3 {
     text-align: center;
     margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .container3 button[type="submit"] {
@@ -743,6 +755,7 @@ height: 40px;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+	width: 20%;
 }
 
 .container3 button[type="submit"]:hover {

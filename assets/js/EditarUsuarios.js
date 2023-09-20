@@ -1,6 +1,4 @@
 
-//! -----------------------------------------------------------------
-
 //*Validaciones
 
 // Función que se ejecutará al enviar el formulario
