@@ -20,9 +20,9 @@ document.getElementById('crearRol').addEventListener('click', function (event) {
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             // Si el usuario confirma, redirige a la página 'Roles.html'
-            if (result.isConfirmed) {
-                window.location.href = '/assets/pages/Roles.html'; // Cambia 'Roles.html' por la URL de la página a la que quieres redirigir
-            }
+             if (result.isConfirmed) {
+                 window.location.href = '/assets/pages/Roles.html'; // Cambia 'Roles.html' por la URL de la página a la que quieres redirigir
+             }
         });
     } else {
         // Si el campo está vacío, muestra una alerta de error
@@ -40,25 +40,25 @@ document.getElementById('crearRol').addEventListener('click', function (event) {
 
 //*API
 
-document.getElementById("miFormulario").addEventListener("submit", function (e) {
+document.getElementById("miFormulario").addEventListener("submit", function(e) {
     e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
 
-    // Captura los valores del formulario
-    const idd = document.getElementById("idd").value;
-    const roleName = document.getElementById("roleName").value;
-    const productos = document.getElementById("module-check").checked;
-    const ventas = document.getElementById("module-check1").checked;
-    const compras = document.getElementById("module-check2").checked;
-    const proveedores = document.getElementById("module-check3").checked;
+    // Captura los valores de los campos del formulario
+    const id = document.getElementById("idd").value;
+    const nombre = document.getElementById("roleName").value;
+    const productos = document.getElementById("module-check1").checked;
+    const ventas = document.getElementById("module-check2").checked;
+    const compras = document.getElementById("module-check3").checked;
+    const proveedores = document.getElementById("module-check4").checked;
 
     // Crea un objeto con los datos a enviar
     const data = {
-        "id": "5",
-    "nombre": "ea",
-    "productos": true,
-    "ventas": false,
-    "compras": false,
-    "proveedores": false
+        "id": id,
+        "nombre": nombre,
+        "productos": productos,
+        "ventas": ventas,
+        "compras": compras,
+        "proveedores": proveedores
     };
 
     // Realiza la solicitud POST a la API
@@ -72,10 +72,10 @@ document.getElementById("miFormulario").addEventListener("submit", function (e) 
     .then(response => response.json())
     .then(data => {
         console.log("Respuesta de la API:", data);
-        // Aquí puedes agregar lógica adicional según lo que necesites hacer con la respuesta de la API
+        
     })
     .catch(error => {
         console.error("Error al enviar la solicitud:", error);
-        // Maneja cualquier error que ocurra durante la solicitud
     });
 });
+  

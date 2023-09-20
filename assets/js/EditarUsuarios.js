@@ -1,21 +1,3 @@
-// Obtener la fecha actual
-var fechaActual = new Date();
-
-// Obtener el día, mes y año
-var dia = fechaActual.getDate();
-var mes = fechaActual.getMonth() + 1; // Los meses en JavaScript comienzan en 0, por lo que sumamos 1
-var año = fechaActual.getFullYear();
-
-// Agregar ceros delante si el día o el mes son menores que 10
-var diaFormateado = dia < 10 ? '0' + dia : dia;
-var mesFormateado = mes < 10 ? '0' + mes : mes;
-
-// Formatear la fecha como "dd/mm/yyyy"
-var fechaFormateada = diaFormateado + '/' + mesFormateado + '/' + año;
-
-// Establecer la fecha formateada como el valor del campo de entrada
-document.getElementById('fecha').value = fechaFormateada;
-
 
 //! -----------------------------------------------------------------
 
@@ -58,4 +40,76 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
             timer: 2000
         });
     }
+});
+
+//! -----------------------------------------------------------------
+//*Recibir parametros del object ID
+
+// Obtener el ID del usuario de los parámetros de URL
+const urlParams = new URLSearchParams(window.location.search);
+const userId = urlParams.get('id');
+
+//*API
+
+const api = `https://apiindividual.onrender.com/api/usuarios/${userId}`
+
+fetch(api)
+  .then((response) => response.json())
+  .then((data) => mostrarData(data))
+  .catch((error) => {
+    console.error('Error al obtener los usuarios:', error);
+  });
+
+  const mostrarData = (data) =>{
+    const fechaOriginal = data.fecha;
+    const fecha1 = new Date(fechaOriginal).toISOString().split('T')[0];
+    document.getElementById('id').value = data.id;
+    document.getElementById('nombre').value = data.nombre;
+    document.getElementById('correo').value = data.correo;
+    document.getElementById('contraseña').value = data.contraseña;
+    document.getElementById('fecha').value = fecha1;
+    document.getElementById('rol').value = data.rol;
+  }
+
+
+const formulario = document.getElementById('miFormulario');
+
+formulario.addEventListener('submit', function (e) {
+  e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+  // Obtén los valores del formulario
+  const id = document.getElementById('id').value
+  const nombre = document.getElementById('nombre').value;
+  const correo = document.getElementById('correo').value;
+  const contraseña = document.getElementById('contraseña').value;
+  const fecha = document.getElementById('fecha').value;
+  const rol = document.getElementById('rol').value;
+
+  // Crea un objeto con los datos a actualizar
+  const datosUsuario = {
+    "id": id,
+    "nombre": nombre,
+    "correo": correo,
+    "contraseña": contraseña,
+    "fecha" : fecha, 
+    "rol": rol
+  };
+
+  fetch(`https://apiindividual.onrender.com/api/usuarios/${userId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(datosUsuario),
+  })
+    .then((response) => {
+      if (response.ok) {
+        window.location.href = '/assets/pages/Usuarios.html';
+      } else {
+        console.error('Error al actualizar los datos del usuario en la API');
+      }
+    })
+    .catch((error) => {
+      console.error('Error al actualizar los datos del usuario:', error);
+    });
 });

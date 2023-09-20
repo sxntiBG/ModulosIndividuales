@@ -724,10 +724,34 @@ height: 40px;
     margin-top: 20px;
 }
 
-.container3 input{
+.container3 input, select{
     padding: 11px;
     border: 1px solid black;
     border-radius: 10px;
+}
+
+.container3 select{
+	width: 180px;
+}
+
+
+.container3 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container3 button[type="submit"] {
+    background-color: var(--rosa-claro);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container3 button[type="submit"]:hover {
+    opacity: .8;
 }
 
 /* Estilos para el contenedor */
@@ -759,24 +783,7 @@ height: 40px;
     font-size: 16px;
   }
   
-  .container3 {
-    text-align: center;
-    margin-top: 20px;
-}
 
-.container3 button[type="submit"] {
-    background-color: var(--rosa-claro);
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.container3 button[type="submit"]:hover {
-    opacity: .8;
-}
 
 
 
@@ -801,7 +808,7 @@ height: 40px;
 
 
 @media screen and (max-width: 576px) {
-	#content nav form .form-input input {
+	#content nav form .form-input input, select {
 		display: none;
 	}
 
@@ -813,11 +820,11 @@ height: 40px;
 		color: var(--dark);
 	}
 
-	#content nav form.show .form-input input {
+	#content nav form.show .form-input input, select {
 		display: block;
 		width: 100%;
 	}
-	#content nav form.show .form-input button {
+	#content nav form.show .form-input button, select {
 		width: 36px;
 		height: 100%;
 		border-radius: 0 36px 36px 0;
