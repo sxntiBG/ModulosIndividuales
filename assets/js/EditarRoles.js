@@ -70,30 +70,30 @@ const formulario = document.getElementById('miFormulario');
 formulario.addEventListener('submit', function (e) {
   e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
 
-  // Obtén los valores del formulario
-  const id = document.getElementById('idd').value
-  const nombre = document.getElementById('roleName').value;
-  const productos = document.getElementById('module-check').value;
-  const ventas = document.getElementById('module-check1').value;
-  const compras = document.getElementById('module-check2').value;
-  const proveedores = document.getElementById('module-check3').value;
-
-  // Crea un objeto con los datos a actualizar
-  const datosUsuario = {
-    "id": id,
-    "nombre": nombre,
-    "productos": productos,
-    "ventas": ventas,
-    "compras" : compras, 
-    "proveedores": proveedores
-  };
+ // Captura los valores de los campos del formulario
+ const id = document.getElementById("idd").value;
+ const nombre = document.getElementById("roleName").value;
+ const productos = document.getElementById("module-check").checked;
+ const ventas = document.getElementById("module-check1").checked;
+ const compras = document.getElementById("module-check2").checked;
+ const proveedores = document.getElementById("module-check3").checked;
+ 
+ // Crea un objeto con los datos a enviar
+ const data = {
+     "id": id,
+     "nombre": nombre,
+     "productos": productos,
+     "ventas": ventas,
+     "compras": compras,
+     "proveedores": proveedores
+ };
 
   fetch(`https://apiindividual.onrender.com/api/usuarios/${userId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(datosUsuario),
+    body: JSON.stringify(data),
   })
     .then((response) => {
       if (response.ok) {

@@ -44,8 +44,6 @@ toggleSwitches.forEach(switchElement => {
 
 //*API
 
-//*API
-
 const url = "https://apiindividual.onrender.com/api/roles";
 
 const eliminarRolEnAPI = (_id) => {
