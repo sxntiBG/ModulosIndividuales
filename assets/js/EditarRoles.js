@@ -88,7 +88,7 @@ formulario.addEventListener('submit', function (e) {
      "proveedores": proveedores
  };
 
-  fetch(`https://apiindividual.onrender.com/api/usuarios/${userId}`, {
+  fetch(`https://apiindividual.onrender.com/api/roles/${userId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
